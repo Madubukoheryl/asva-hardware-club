@@ -1,0 +1,37 @@
+# H-Bridge Motor Direction Control
+
+A DC motor driven by an H-bridge made from four 2N2222 transistors, simulated in Proteus 8. One SPDT switch flips the motor between forward and reverse.
+
+## Parts
+
+- 1 x 9V battery (BAT1)
+- 4 x 2N2222 NPN transistors (Q1 to Q4)
+- 4 x 1k resistors (R1 to R4), one on each transistor base
+- 1 x SPDT switch (SW1)
+- 1 x DC motor
+
+## How it works
+
+The motor sits in the middle of the bridge. Q1 and Q3 connect the motor to the positive rail, and Q2 and Q4 connect it to ground. The motor only runs when a transistor on one side and the one diagonally opposite are on together.
+
+- Q1 and Q4 on: current goes through the motor one way.
+- Q3 and Q2 on: current goes through the motor the other way.
+
+## Direction control
+
+The switch connects the 9V supply to one of two base-resistor pairs:
+
+- Position 1 feeds R4 and R2, which turns on Q1 and Q4.
+- Position 2 feeds R3 and R1, which turns on Q2 and Q3.
+
+The side that isn't selected gets no base current, so its transistors stay off. Because only one pair can be on at a time, the top and bottom transistors on the same side are never on together, so the battery can't be shorted. Flipping the switch swaps which diagonal is on, which reverses the current through the motor and so the direction it spins.
+
+## Running it
+
+Press play in Proteus, then click SW1 to change direction.
+
+## Limitations
+
+- The high-side NPN transistors drop some voltage, so the motor gets noticeably less than 9V.
+- A 2N2222 only handles about 600 mA, so this suits small motors only.
+- For real hardware, add flyback diodes across the transistors and pull-down resistors on the bases.
