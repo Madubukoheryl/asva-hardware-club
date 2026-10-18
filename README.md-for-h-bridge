@@ -36,6 +36,6 @@ Press play in Proteus, then click SW1 to change direction.
 
 ## Limitations
 
-- The high-side NPN transistors drop some voltage, so the motor gets noticeably less than 9V.
+- The high-side NPN transistors drop some voltage, so the motor gets noticeably less than 12V.
 - A 2N2222 only handles about 600 mA, so this suits small motors only.
 - For real hardware, add flyback diodes across the transistors and pull-down resistors on the bases.
