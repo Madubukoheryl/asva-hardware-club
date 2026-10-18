@@ -1,3 +1,6 @@
+proof of the motor going in both directions is in the link below
+https://drive.google.com/drive/u/0/home?fd=true
+
 # H-Bridge Motor Direction Control
 
 A DC motor driven by an H-bridge made from four 2N2222 transistors, simulated in Proteus 8. One SPDT switch flips the motor between forward and reverse.
